@@ -32,10 +32,8 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Serve os arquivos estáticos do frontend
+// Serve os arquivos estáticos do frontend (inclui frontend/img/)
 app.use(express.static(path.join(__dirname, '../frontend')));
-// Serve a pasta de imagens usada pelo CSS
-app.use('/img', express.static(path.join(__dirname, '../img')));
 
 // Rotas da API
 app.use('/api/auth', authRoutes);
