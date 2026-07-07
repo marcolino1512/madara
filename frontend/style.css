@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/Madara-1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: animateBg 7s linear infinite;
+}
+
+@keyframes animateBg {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* ===== CAIXA PRINCIPAL ===== */
+.login-box {
+    position: relative;
+    width: 400px;
+    min-height: 450px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 35px;
+    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.1);
+    transition: min-height 0.4s ease;
+}
+
+.login-box.alto {
+    min-height: 530px;
+}
+
+/* ===== FORMULÁRIOS ===== */
+form {
+    width: 100%;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ===== CAMPO DE INPUT ===== */
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -5px;
+    font-size: .85em;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+/* ===== LEMBRE-ME / ESQUECI ===== */
+.remember-forgot {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* ===== BOTÃO PRINCIPAL ===== */
+button {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background: #f0f0f0;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ===== LINK DE REGISTRO ===== */
+.register-link {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 5px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+/* ===== MENSAGEM DE ERRO ===== */
+.mensagem-erro {
+    background: rgba(220, 53, 69, 0.85);
+    color: #fff;
+    font-size: .85em;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: -10px 0 12px;
+    text-align: center;
+    display: none;
+}
+
+.mensagem-erro.visivel {
+    display: block;
+}
+
+/* ===== ESTADO: CARREGANDO ===== */
+.estado {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.carregando-icone {
+    font-size: 4em;
+    color: #fff;
+    animation: girar 1s linear infinite;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.sub-texto {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: .9em;
+    margin-top: 8px;
+}
+
+/* ===== ESTADO: LOGADO ===== */
+.usuario-avatar {
+    font-size: 5em;
+    color: #fff;
+    margin-bottom: 8px;
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.usuario-id {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: .75em;
+    margin-top: 6px;
+    word-break: break-all;
+}
+
+.btn-sair {
+    margin-top: 24px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-sair:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== UTILITÁRIO ===== */
+.hidden {
+    display: none !important;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 420px) {
+    .login-box {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        border: none;
+    }
+}

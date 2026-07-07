@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://SEU-DOMINIO-AQUI.ngrok-free.app/api/:path*"
+    }
+  ]
+}

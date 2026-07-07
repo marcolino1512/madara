@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Login / Registro</title>
+</head>
+<body>
+    <section>
+        <div class="login-box" id="login-box">
+
+            <!-- FORMULÁRIO DE LOGIN -->
+            <form id="form-login">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="login-email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="login-senha" required>
+                    <label>Senha</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" id="lembre-me">Lembre-me</label>
+                    <a href="#">Esqueci a senha</a>
+                </div>
+                <div id="login-erro" class="mensagem-erro"></div>
+                <button type="submit">Login</button>
+                <div class="register-link">
+                    <p>Não tem conta? <a href="#" id="ir-para-registro">Registrar-se</a></p>
+                </div>
+            </form>
+
+            <!-- FORMULÁRIO DE REGISTRO -->
+            <form id="form-registro" class="hidden">
+                <h2>Cadastro</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" id="reg-nome" required>
+                    <label>Nome</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="reg-email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="reg-senha" required>
+                    <label>Senha</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="shield-checkmark"></ion-icon></span>
+                    <input type="password" id="reg-confirmar-senha" required>
+                    <label>Repetir Senha</label>
+                </div>
+                <div id="reg-erro" class="mensagem-erro"></div>
+                <button type="submit">Criar Conta</button>
+                <div class="register-link">
+                    <p>Já tem conta? <a href="#" id="ir-para-login">Fazer Login</a></p>
+                </div>
+            </form>
+
+            <!-- ESTADO: CARREGANDO -->
+            <div id="estado-carregando" class="estado hidden">
+                <div class="carregando-icone">
+                    <ion-icon name="sync"></ion-icon>
+                </div>
+                <h2>Logando...</h2>
+                <p class="sub-texto">Por favor aguarde</p>
+            </div>
+
+            <!-- ESTADO: LOGADO -->
+            <div id="estado-logado" class="estado hidden">
+                <div class="usuario-avatar">
+                    <ion-icon name="person-circle"></ion-icon>
+                </div>
+                <h2 id="usuario-nome-exibido">Olá!</h2>
+                <p class="sub-texto" id="usuario-email-exibido"></p>
+                <p class="usuario-id" id="usuario-id-exibido"></p>
+                <button id="btn-sair" class="btn-sair">Sair</button>
+            </div>
+
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
